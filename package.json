@@ -2,6 +2,10 @@
   "name": "urban_holder",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.17.0",
+    "npm": "6.14.13"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
