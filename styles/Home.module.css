@@ -1,5 +1,9 @@
 .container {
-  padding: 0 2rem;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  position: relative;
+  overflow: hidden;
 }
 
 .main {
@@ -12,118 +16,82 @@
   align-items: center;
 }
 
-.footer {
-  display: flex;
+.Left {
   flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
+  background-color: crimson;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+}
+
+.Right {
+  position: absolute;
+  height: 100vh;
+  width: 50vw;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  flex-grow: 1;
+  justify-content: space-around;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.Wrapper {
+  display: flex;
+  transition: all 1s ease;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
+.Arrow {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 999999
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+.Button {
+  height: 50px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: crimson;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
+@media only screen and (max-width:380px) {
+  .container {
+    overflow-y: scroll;
+  }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
+  .Left {
+    display: none;
+  }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
+  .Right {
+    position: static;
+    height: auto;
     width: 100%;
-    flex-direction: column;
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
+  .Arrow {
+    display: none;
   }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
+
+  .Button {
+    max-width: 100px
   }
 }
